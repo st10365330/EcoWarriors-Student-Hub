@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EcoWarriors - Your Eco-Goal</title>
+    <meta name="description" content="Set personal sustainability goals to make a difference with EcoWarriors Student Hub.">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <header>
+        <h1>EcoWarriors Student Hub</h1>
+        <img src="images/logo.png" alt="EcoWarriors Foundation Logo - Empowering Sustainability" width="636" height="600">
+        <div id="quoteOfTheDay" style="text-align: center;"></div>
+        <nav aria-label="Main navigation">
+            <ul role="menubar">
+                <li role="none"><a href="index.html" role="menuitem">Learn</a></li>
+                <li role="none"><a href="track.html" role="menuitem">Track</a></li>
+                <li role="none"><a href="tips.html" role="menuitem">Tips</a></li>
+                <li role="none"><a href="goals.html" role="menuitem" class="active" aria-current="page">Goals</a></li>
+                <li role="none"><a href="contact.html" role="menuitem">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container">
+        <h2 class="section-heading">Your Eco-Goal</h2>
+
+        <section class="goal-setting-section" aria-labelledby="goal-setting-heading">
+            <h3 id="goal-setting-heading" class="subheading">Set Your Personal Eco-Goal</h3>
+            <form id="goalSetForm">
+                <div class="form-group">
+                    <label for="goalInput">My Goal:</label>
+                    <input type="text" id="goalInput" name="goalInput" placeholder="e.g., Volunteer for 10 hours this month" aria-required="true">
+                </div>
+                <div class="progress-bar-container">
+                    <p id="progressCheer" class="progress-cheer" style="display: none;">Keep Going!</p>
+                    <div id="goalProgressBar" class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" aria-label="Goal progress">
+                        <div id="goalProgressBarFill" class="progress-bar-fill"></div>
+                    </div>
+                </div>
+                <div class="form-button-group">
+                    <button type="submit" id="setGoalBtn" disabled>Set <span class="icon checkmark-icon" aria-hidden="true">✔</span></button>
+                </div>
+                <div id="goalFormError" class="form-error-message" role="alert" aria-live="assertive" style="display: none;"></div>
+            </form>
+        </section>
+
+        <div id="goalAchievementFeedback" class="action-feedback-message" role="alert" aria-live="polite" style="display: none;">
+            <p id="achievementText">You did it!</p>
+            <p class="feedback-note">Goal reached!</p>
+        </div>
+
+        <section class="goal-display-section" aria-labelledby="goal-display-heading">
+            <h3 id="goal-display-heading" class="subheading">Current Goals</h3>
+            <div class="goal-item">
+                <div class="goal-checkbox-container">
+                    <input type="checkbox" id="personalGoalCheckbox" class="custom-checkbox" aria-labelledby="personalGoalText">
+                    <label for="personalGoalCheckbox" class="checkbox-label" aria-hidden="true"></label>
+                    <span id="personalGoalText">Current Goal: Not set yet.</span>
+                </div>
+                <p id="personalGoalProgressText">Goal Progress: N/A</p>
+            </div>
+
+            <div class="goal-item">
+                <div class="goal-checkbox-container">
+                    <input type="checkbox" id="groupGoalCheckbox" class="custom-checkbox" aria-labelledby="groupGoalText">
+                    <label for="groupGoalCheckbox" class="checkbox-label" aria-hidden="true"></label>
+                    <span id="groupGoalText">Group Goal: Recycle 20 kg</span>
+                </div>
+                <p id="groupGoalProgressText">Progress: 15/20 kg</p>
+            </div>
+        </section>
+    </main>
+
+    <aside class="chat-box" aria-labelledby="chat-box-heading-goals">
+        <h3 id="chat-box-heading-goals" class="sr-only">Help Me Chat</h3>
+        <div class="chat-input-area">
+            <input type="text" id="chatInputGoals" placeholder="e.g., How to set a goal?" aria-label="Type your question for help">
+            <button id="chatSendBtnGoals" disabled>Send</button>
+        </div>
+        <div id="chatResponsePopupGoals" class="chat-response-popup" role="dialog" aria-modal="true" aria-labelledby="chat-response-heading-goals" style="display: none;">
+            <h4 id="chat-response-heading-goals" class="sr-only">Chat Bot Response</h4>
+            <p id="chatResponseTextGoals"></p>
+            <button id="chatClosePopupBtnGoals" aria-label="Close chat response">Close</button>
+        </div>
+        <div id="chatErrorGoals" class="form-error-message" role="alert" aria-live="assertive" style="display: none;"></div>
+    </aside>
+
+    <footer>
+        <div class="footer-content">
+            <p>Contact us at: <a href="mailto:support@ecowarriors.com">support@ecowarriors.com</a> | Phone: +1 123-456-7890</p>
+            <p>© 2025 EcoWarriors Foundation. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="goals-script.js"></script>
+    <script src="quote.js"></script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'93fb45e0ca64887c',t:'MTc0NzIzNDkwOC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>

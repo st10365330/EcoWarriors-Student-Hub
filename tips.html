@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EcoWarriors - Share Your Eco-Tips</title>
+    <meta name="description" content="Discover and share practical sustainability tips with EcoWarriors Student Hub.">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <header>
+        <h1>EcoWarriors Student Hub</h1>
+        <img src="images/logo.png" alt="EcoWarriors Foundation Logo - Empowering Sustainability" width="636" height="600">
+        <div id="quoteOfTheDay" style="text-align: center;"></div>
+        <nav aria-label="Main navigation">
+            <ul role="menubar">
+                <li role="none"><a href="index.html" role="menuitem">Learn</a></li>
+                <li role="none"><a href="track.html" role="menuitem">Track</a></li>
+                <li role="none"><a href="tips.html" role="menuitem" class="active" aria-current="page">Tips</a></li>
+                <li role="none"><a href="goals.html" role="menuitem">Goals</a></li>
+                <li role="none"><a href="contact.html" role="menuitem">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container">
+        <h2 class="section-heading">Share Your Eco-Tips</h2>
+
+        <section class="tip-input-section" aria-labelledby="tip-input-heading">
+            <h3 id="tip-input-heading" class="subheading">Share a New Tip</h3>
+            <form id="tipShareForm">
+                <div class="form-group-inline">
+                    <label for="tipInput" class="sr-only">Your Tip:</label>
+                    <input type="text" id="tipInput" name="tipInput" placeholder="e.g., Bring a reusable bag to class" aria-required="true">
+                    <button type="button" id="favoriteTipStar" class="icon-button star-button" aria-label="Star to favorite tip" aria-pressed="false">
+                        <span class="star-icon empty">☆</span>
+                        <span class="star-icon filled" style="display:none;">★</span>
+                    </button>
+                    <button type="submit" id="shareTipBtn" disabled>Share</button>
+                </div>
+                <div id="tipFormError" class="form-error-message" role="alert" aria-live="assertive" style="display: none;"></div>
+            </form>
+        </section>
+
+        <div id="tipFeedback" class="action-feedback-message" role="alert" aria-live="polite" style="display: none;">
+            <p id="tipFeedbackText">Shared!</p>
+            <p class="feedback-note">Great Idea!</p>
+        </div>
+
+        <section class="shared-tips-section" aria-labelledby="shared-tips-heading">
+            <h3 id="shared-tips-heading" class="subheading">Community Eco-Tips</h3>
+            <div class="tips-list-container">
+                <ul id="sharedTipsList">
+                    <li class="top-tip"><span class="star-icon-list" aria-label="Top Tip star">★</span> Use less plastic in your daily life.</li>
+                    <li>Jake: Plant a tree if you have space!</li>
+                    <li>Maria: Always turn off taps properly to save water.</li>
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    <aside class="chat-box" aria-labelledby="chat-box-heading-tips">
+        <h3 id="chat-box-heading-tips" class="sr-only">Chat for Help</h3>
+        <div class="chat-input-area">
+            <input type="text" id="chatInputTips" placeholder="e.g., Water-saving ideas?" aria-label="Type your question for the chat bot">
+            <button id="chatSendBtnTips" disabled>Send</button>
+        </div>
+        <div id="chatResponsePopupTips" class="chat-response-popup" role="dialog" aria-modal="true" aria-labelledby="chat-response-heading-tips" style="display: none;">
+            <h4 id="chat-response-heading-tips" class="sr-only">Chat Bot Response</h4>
+            <p id="chatResponseTextTips"></p>
+            <button id="chatClosePopupBtnTips" aria-label="Close chat response">Close</button>
+        </div>
+        <div id="chatErrorTips" class="chat-error-message" role="alert" aria-live="assertive" style="display: none;"></div>
+    </aside>
+
+    <footer>
+        <div class="footer-content">
+            <p>Contact us at: <a href="mailto:info@ecowarriors.org">info@ecowarriors.org</a> | Phone: +1 123-456-7890</p>
+            <p>© 2025 EcoWarriors Foundation. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="tips-script.js"></script>
+    <script src="quote.js"></script>
+</body>
+</html>

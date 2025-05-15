@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EcoWarriors - Track Your Actions</title>
+    <meta name="description" content="Track your sustainability actions and see your impact with EcoWarriors Student Hub.">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <header>
+        <h1>EcoWarriors Student Hub</h1>
+        <img src="images/logo.png" alt="EcoWarriors Foundation Logo - Empowering Sustainability" width="636" height="600">
+        <div id="quoteOfTheDay" style="text-align: center;"></div>
+        <nav aria-label="Main navigation">
+            <ul role="menubar">
+                <li role="none"><a href="index.html" role="menuitem">Learn</a></li>
+                <li role="none"><a href="track.html" role="menuitem" class="active" aria-current="page">Track</a></li>
+                <li role="none"><a href="tips.html" role="menuitem">Tips</a></li>
+                <li role="none"><a href="goals.html" role="menuitem">Goals</a></li>
+                <li role="none"><a href="contact.html" role="menuitem">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container">
+        <h2 class="section-heading">Track Your Eco-Actions</h2>
+
+        <section aria-labelledby="log-action-heading">
+            <h3 id="log-action-heading" class="subheading">Log Your Eco Action</h3>
+            <form id="ecoActionForm">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="whatDid">What I Did:</label>
+                        <input type="text" id="whatDid" placeholder="e.g., Recycled paper">
+                    </div>
+                    <div class="form-group">
+                        <label for="howMuch">How Much:</label>
+                        <input type="number" id="howMuch" min="0" max="100" value="0">
+                        <small>(kg, hours, items etc.)</small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="howMuchSlider">Adjust Amount with Slider:</label>
+                    <input type="range" id="howMuchSlider" min="0" max="100" value="0">
+                </div>
+                <div class="form-button-group">
+                    <button type="submit" id="addActionBtn" disabled>Add <span class="icon plus-icon" aria-hidden="true">+</span></button>
+                    <p id="formError" class="form-error-message"></p>
+                </div>
+            </form>
+        </section>
+
+        <section class="action-feedback-message" id="actionFeedback" aria-live="polite">
+            <p id="feedbackText">Great job!</p>
+            <p>Nice work – keep going!</p>
+            <button id="feedbackOkBtn">OK</button>
+        </section>
+
+        <section aria-labelledby="actions-log-heading">
+            <h3 id="actions-log-heading" class="subheading">My Eco-Actions Log</h3>
+            <div class="table-container">
+                <table id="actionsTable">
+                    <tr><th>Action</th><th>Amount</th></tr>
+                    <tr><td>🌿 Sara: Volunteered</td><td>3 hours</td></tr>
+                    <tr><td>🌿 Composted</td><td>1 kg</td></tr>
+                </table>
+            </div>
+        </section>
+
+        <section aria-labelledby="class-total-heading">
+            <div class="class-total">
+                <p>Class Total: <span id="classTotalAmount">10 kg</span></p>
+                <p>Beat Yesterday’s 12 kg!</p>
+            </div>
+        </section>
+
+        <section class="chat-box" aria-labelledby="chat-heading">
+            <h3 id="chat-heading" class="sr-only">Help Chat</h3>
+            <div class="chat-input-area">
+                <input type="text" id="chatInputTrack" placeholder="Ask away!">
+                <button id="chatSendBtnTrack" disabled>Send</button>
+            </div>
+            <p id="chatErrorTrack" class="chat-error-message"></p>
+        </section>
+
+        <section class="chat-response-popup" id="chatResponsePopupTrack" aria-live="polite">
+            <p id="chatResponseTextTrack">Chat Bot Response</p>
+            <button id="chatClosePopupBtnTrack">Close</button>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>Contact us at: <a href="mailto:support@ecowarriors.com">support@ecowarriors.com</a> | Phone: +1 123-456-7890</p>
+            <p>© 2025 EcoWarriors Foundation. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="track-script.js"></script>
+    <script src="quote.js"></script>
+</body>
+</html>

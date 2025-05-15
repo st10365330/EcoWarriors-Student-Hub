@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EcoWarriors Student Hub</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <h1>EcoWarriors Student Hub</h1>
+            <img src="images/logo.png" alt="EcoWarriors Foundation Logo - Empowering Sustainability" width="636" height="600">
+            <div id="quoteOfTheDay" aria-live="polite"></div>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Learn</a></li>
+                <li><a href="track.html">Track</a></li>
+                <li><a href="tips.html">Tips</a></li>
+                <li><a href="goals.html">Goals</a></li>
+                <li><a href="contact.html" class="active">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main class="container">
+        <h2 class="section-heading">Contact Us</h2>
+
+        <section class="Contact Submission Form" aria-labelledby="Contact Submission Form-heading">
+            <h3 id="Contact Submission Form" class="subheading">Contact Submission Form</h3>
+            <form id="contactForm">
+                <div class="form-group">
+                    <label for="contactName">Name:</label>
+                    <input type="text" id="contactName" placeholder="e.g. Alex Smith">
+                    <p class="field-error-message" id="nameError"></p>
+                </div>
+                <div class="form-group">
+                    <label for="contactEmail">Email:</label>
+                    <input type="email" id="contactEmail" placeholder="e.g. alex@example.com">
+                    <p class="field-error-message" id="emailError"></p>
+                </div>
+                <div class="form-group">
+                    <label for="contactMessage">Message:</label>
+                    <textarea id="contactMessage" placeholder="e.g. I have a question about the quiz!"></textarea>
+                    <p class="field-error-message" id="messageError"></p>
+                </div>
+                <div class="form-button-group">
+                    <button type="submit" id="sendContactBtn" disabled>Send <span class="icon envelope-icon" aria-hidden="true">✉</span></button>
+                </div>
+            </form>
+            <div class="action-feedback-message" id="contactConfirmation">
+                <p>Sent!</p>
+                <p>We’ll get back to you soon!</p>
+            </div>
+        </section>
+    </main>
+    <section class="chat-box">
+        <h3 class="sr-only">Quick Help Chat</h3>
+        <div class="chat-input-area">
+            <input type="text" id="chatInputContact" placeholder="e.g. How to contact support?">
+            <button id="chatSendBtnContact" disabled>Send</button>
+        </div>
+        <p class="chat-error-message" id="chatErrorContact"></p>
+        <div class="chat-response-popup" id="chatResponsePopupContact">
+            <p id="chatResponseTextContact"></p>
+            <button id="chatClosePopupBtnContact">Close</button>
+        </div>
+    </section>
+    <footer>
+        <div class="footer-content">
+            <p>Contact us at: <a href="mailto:support@ecowarriors.com">support@ecowarriors.com</a> | Phone: +1 123-456-7890</p>
+            <p>© 2025 EcoWarriors Foundation. All rights reserved.</p>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+    <script src="contact-script.js"></script>
+    <script src="quote.js"></script>
+</body>
+</html>
